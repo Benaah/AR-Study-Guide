@@ -8,6 +8,7 @@ An iOS AR application that brings textbooks to life with interactive 3D models.
 - **Object Capture Engine**: Create 3D models from photos using Object Capture API
 - **Guided Presentation Engine**: Step-by-step AR lessons with animations
 - **Physical Anchor Engine**: Use physical objects as anchors for AR content
+- **AR Library**: Browse and manage educational 3D models with detailed metadata
 
 ## Engines
 
@@ -90,12 +91,9 @@ User-generated 3D models through photogrammetry - transform photos into AR-ready
 ## Building
 
 1. Open the project in Xcode (on macOS)
-2. Add an asset catalog named "AR Resources"
-3. Add reference images and objects for tracking
-4. Add camera permissions to Info.plist:
-   - NSCameraUsageDescription: "Camera access is required for AR tracking and 3D object capture"
-   - NSPhotoLibraryUsageDescription: "Photo library access is needed to save captured images"
-   - ARKit required device capabilities
+2. Copy `Info.plist.template` to `Info.plist` in your Xcode project
+3. Add an asset catalog named "AR Resources"
+4. Add reference images and objects for tracking
 5. Build and run on a device with AR capabilities
 
 ## CI/CD
@@ -116,14 +114,17 @@ The project includes GitHub Actions workflows for automated testing and releases
 - Uses Swift Package Manager for dependency management
 - Compatible with Xcode 14+ and Swift 5.9+
 - Includes comprehensive .gitignore for iOS/Swift development
+- `Info.plist.template` provides all necessary permissions and configurations
 
 ## Permissions Required
 
-The app requires the following permissions for full functionality:
+The app requires the following permissions (included in Info.plist.template):
 
-- **Camera Access**: Required for AR tracking and Object Capture photogrammetry
-- **Photo Library**: Optional, for saving captured photos and reconstructed models
+- **Camera Access**: Required for AR tracking, textbook scanning, and 3D object capture
+- **Photo Library**: For saving captured images and reconstructed models
 - **ARKit**: Device capability for AR features
+- **Location Services**: Optional, for location-aware AR content
+- **Microphone**: Optional, for audio-guided lessons
 
 ## 3D Model Organization
 

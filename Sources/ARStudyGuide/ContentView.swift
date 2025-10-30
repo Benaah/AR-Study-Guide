@@ -21,6 +21,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Physical", systemImage: "cube")
                 }
+            LibraryView()
+                .tabItem {
+                    Label("Library", systemImage: "books.vertical")
+                }
         }
     }
 }
