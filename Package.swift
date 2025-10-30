@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "ARStudyGuide",
     platforms: [
-        .iOS(.v16)
+        .iOS(.v15)  // Updated for Object Capture API
     ],
     products: [
         .executable(name: "ARStudyGuide", targets: ["ARStudyGuide"]),
